@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+
 
 module.exports = (env, argv) => {
   const isDevelopment = argv.mode === 'development';
@@ -9,6 +11,8 @@ module.exports = (env, argv) => {
     entry: './src/index.js',
     devServer: {
       static: './dist',
+      // children: false,
+      hot: true
     },
     module: {
       rules: [
@@ -27,7 +31,8 @@ module.exports = (env, argv) => {
         template: './src/index.html',
         filename: 'index.html',
       }),
-      new MiniCssExtractPlugin(), // MiniCssExtractPlugin instance
+      new MiniCssExtractPlugin(),
+      new webpack.HotModuleReplacementPlugin(),// MiniCssExtractPlugin instance
     ],
     output: {
       filename: isDevelopment ? 'main.js' : 'main.[contenthash].js',
