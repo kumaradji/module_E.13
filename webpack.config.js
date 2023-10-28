@@ -11,7 +11,6 @@ module.exports = (env, argv) => {
     entry: './src/index.js',
     devServer: {
       static: './dist',
-      // children: false,
       hot: true
     },
     module: {
