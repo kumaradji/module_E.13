@@ -5,7 +5,8 @@
   "scripts": {
     "start": "webpack serve --open",
     "lint": "eslint ./src",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -29,7 +30,7 @@
     "eslint-plugin-jest": "^27.6.0",
     "html-webpack-plugin": "^5.5.3",
     "htmlhint": "^1.1.4",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^15.0.2",
     "mini-css-extract-plugin": "^2.7.6",
     "style-loader": "^3.3.3",
