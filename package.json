@@ -10,14 +10,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{js,html}": [
-      "eslint --fix",
-      "htmlhint"
-    ]
+    "*.js": "eslint --fix",
+    "*.html": "htmlhint"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
